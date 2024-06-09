@@ -12,7 +12,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery grid-columns-5 p-3">
+    <div className="gallery grid-columns-5">
       {fotos.map((fotos, index) => (
         <div
           className="contenedor_foto pb-2"
@@ -21,7 +21,7 @@ const Gallery = () => {
         >
           <IconHeart filled={fotos.liked} onClick={() => darLike(index)} />
 
-          <p className="texto_fotos m-0">{fotos.alt}</p>
+          <p className="texto_fotos bg-light">{fotos.alt}</p>
         </div>
       ))}
     </div>

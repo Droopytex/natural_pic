@@ -4,6 +4,13 @@ import IconHeart from "./IconHeart";
 
 const Gallery = () => {
   const { fotos, setFotos } = useContext(FotosContext);
+
+  const darLike = (index) => {
+    const newFotos = [...fotos];
+    newFotos[index].liked = !newFotos[index].liked;
+    setFotos(newFotos);
+  };
+
   return (
     <div className="gallery grid-columns-5 p-3">
       {fotos.map((fotos, index) => (
@@ -12,7 +19,7 @@ const Gallery = () => {
           style={{ backgroundImage: `url(${fotos.src.tiny})` }}
           key={index}
         >
-          <IconHeart filled={fotos.liked} />
+          <IconHeart filled={fotos.liked} onClick={() => darLike(index)} />
 
           <p className="texto_fotos m-0">{fotos.alt}</p>
         </div>

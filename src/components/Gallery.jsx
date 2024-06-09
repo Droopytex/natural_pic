@@ -1,5 +1,6 @@
 import { FotosContext } from "../context/ContexFotos";
 import { useContext } from "react";
+import IconHeart from "./IconHeart";
 
 const Gallery = () => {
   const { fotos, setFotos } = useContext(FotosContext);
@@ -11,10 +12,9 @@ const Gallery = () => {
           style={{ backgroundImage: `url(${fotos.src.tiny})` }}
           key={index}
         >
-          {/* <img className="la_foto" src={fotos.src.tiny} alt="" /> */}
+          <IconHeart filled={fotos.liked} />
 
           <p className="texto_fotos m-0">{fotos.alt}</p>
-          <p>{fotos.liked}</p>
         </div>
       ))}
     </div>
